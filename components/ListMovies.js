@@ -11,15 +11,15 @@ const useStyles = makeStyles((theme) => ({
 		display: 'flex',
 		flexDirection: 'column',
 		margin: 10,
-		maxWidth: 160,
+		width: 165,
 	},
 	card: {
 		// margin: 10,
 	},
 
 	media: {
-		height: 230,
-		width: 150,
+		height: 250,
+		width: 165,
 		marginTop: 5,
 	},
 }));
