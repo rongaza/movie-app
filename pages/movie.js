@@ -7,10 +7,8 @@ import { makeStyles, Fab } from '@material-ui/core';
 const movieReducer = (state, action) => {
 	switch (action.type) {
 		case 'FETCH_MOVIES':
-			console.log(action.payload);
 			return [...action.payload];
 		case 'FETCH_MOVIE_DETAILS':
-			console.log('more');
 			return state;
 		default:
 			return state;
@@ -30,12 +28,10 @@ const Movie = ({ movie }) => {
 	const [isLoading, setIsLoading] = useState(true);
 	const [showSearchButton, setShowSearchButton] = useState(false);
 	const [searchParameters, setSearchParameters] = useState(
-		`https://api.themoviedb.org/3/discover/movie?&api_key=${process.env.movieAPIKey}`
+		`https://api.themoviedb.org/3/discover/movie?&api_key=${process.env.MOVIE_API_KEY}`
 	);
 	const [movies, dispatch] = useReducer(movieReducer, []);
 	const [movieDetails, setMovieDetails] = useState({});
-	// const [pages, setPages] = useState(null);
-	// const [currPage, setCurrPage] = useState(1);
 
 	const fetchMovies = async (dispatch, url) => {
 		const res = await fetch(url);

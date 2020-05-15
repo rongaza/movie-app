@@ -12,7 +12,7 @@ const SandBox = (props) => {
 	const [error, setError] = useState(null);
 
 	const urlParams = {
-		api_key: process.env.movieAPIKey,
+		api_key: process.env.MOVIE_API_KEY,
 		language: 'en-US',
 		page: '1',
 		include_adult: 'false',

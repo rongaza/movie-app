@@ -14,3 +14,4 @@ yarn-error.log*
 #testing folder
 sandbox
 pages/sandbox.js
+.vercel

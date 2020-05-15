@@ -1,24 +1,9 @@
 import { useState, useEffect } from 'react';
-
 import { connect } from 'react-redux';
 import { fetchData } from '../src/api/api';
 import Layout from '../components/Layout';
-import {
-	makeStyles,
-	Grid,
-	Card,
-	CardMedia,
-	CardContent,
-	IconButton,
-	CardActionArea,
-	Typography,
-} from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 import { CircularProgress } from '@material-ui/core';
-
-import { addFavorite, removeFavorite } from '../redux/actions/favoritesActions';
-import { addToList, removeFromList } from '../redux/actions/watchListActions';
-
-import ListMovies from '../components/ListMovies';
 import UserList from '../components/UserList';
 
 const Lists = ({ dispatch, favorites, watch }) => {
@@ -32,7 +17,7 @@ const Lists = ({ dispatch, favorites, watch }) => {
 		for (let i = 0; i < favorites.length; i++) {
 			const id = favorites[i];
 			const url = `https://api.themoviedb.org/3/movie/${id}`;
-			const urlParams = { api_key: process.env.movieAPIKey };
+			const urlParams = { api_key: process.env.MOVIE_API_KEY };
 			const details = await fetchData(url, urlParams);
 			list.push(details);
 		}
@@ -51,7 +36,7 @@ const Lists = ({ dispatch, favorites, watch }) => {
 
 	const renderList = (list) => {
 		if (list.length > 0) {
-			return list.map((movie) => <UserList movie={movie} />);
+			return list.map((movie) => <UserList movie={movie} key={movie.id} />);
 		} else {
 			return <Typography>There are no movies in this list.</Typography>;
 		}

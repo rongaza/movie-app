@@ -35,6 +35,7 @@
 	},
 	"devDependencies": {
 		"babel-plugin-styled-components": "^1.8.0",
+		"dotenv-webpack": "^1.8.0",
 		"file-loader": "^6.0.0"
 	}
 }

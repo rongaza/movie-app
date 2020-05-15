@@ -108,7 +108,6 @@ const FilterResults = ({ updateSearchParameters, search, toggleSearchButton }) =
 	};
 
 	const handleVoterRating = (e, newValue) => {
-		console.log(newValue);
 		setVoterRating(newValue);
 	};
 

@@ -19,7 +19,7 @@ const MovieDetail = ({ dispatch, favorites, watchList, movie }) => {
 	const [videoTrailerID, setVideoTrailerID] = useState(null);
 
 	const fetchVideoTrailerID = async (id) => {
-		const url = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${process.env.movieAPIKey}&language=en-US`;
+		const url = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${process.env.MOVIE_API_KEY}&language=en-US`;
 		const res = await fetch(url);
 		const data = await res.json();
 

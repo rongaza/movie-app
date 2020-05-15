@@ -52,7 +52,7 @@ const Reviews = ({ reviews }) => {
 										<PersonIcon
 											style={{
 												position: 'relative',
-												top: '-2px',
+												top: '3px',
 											}}
 										/>{' '}
 										{

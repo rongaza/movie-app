@@ -1,6 +1,8 @@
+const Dotenv = require('dotenv-webpack');
+
 module.exports = {
 	env: {
-		movieAPIKey: 'a41a2ea2b89a629ae5e3e8ff465e72bc',
+		MOVIE_API_KEY: process.env.MOVIE_API_KEY,
 	},
 
 	webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
@@ -12,7 +14,7 @@ module.exports = {
 				},
 			],
 		});
+		config.plugins.push(new Dotenv({ silent: true }));
 		return config;
 	},
 };
-

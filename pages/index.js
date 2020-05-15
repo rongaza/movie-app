@@ -6,15 +6,6 @@ import { makeStyles, Grid, Fab, Typography } from '@material-ui/core';
 import { Pagination } from '@material-ui/lab';
 import axios from 'axios';
 
-const movieReducer = (state, action) => {
-	switch (action.type) {
-		case 'FETCH_MOVIES':
-			return [...action.payload];
-		default:
-			return state;
-	}
-};
-
 const useStyles = makeStyles(() => ({
 	floatingButton: {
 		position: 'fixed',
@@ -34,7 +25,7 @@ const Movie = () => {
 
 	const url = 'https://api.themoviedb.org/3/discover/movie';
 	const urlParams = {
-		api_key: process.env.movieAPIKey,
+		api_key: process.env.MOVIE_API_KEY,
 		with_original_language: 'en',
 		language: 'en-US',
 		include_adult: 'false',
