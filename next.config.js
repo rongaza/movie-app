@@ -1,6 +1,6 @@
 module.exports = {
 	env: {
-		movieAPIKey: 'a41a2ea2b89a629ae5e3e8ff465e72bc',
+		movieAPIKey: '',
 	},
 
 	webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
